@@ -1,0 +1,15 @@
+---
+const {content,name,role} = Astro.props;
+---
+
+<div class="border-cinnabar rounded-xl border-2 p-3 shadow-md ">
+    <div class="flex items-center p-2">
+        <div class="w-10 h-10 bg-cinnabar rounded-full">
+        </div>
+        <div class="font-thin text-sm pl-3">
+            <p class="font-medium">{name}</p>
+            <p class="text-gray-600">{role}</p>
+        </div>
+    </div> 
+    <p>{content}</p>  
+</div>

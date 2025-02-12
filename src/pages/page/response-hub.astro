@@ -1,0 +1,83 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro"
+import Content from '../../content/page/response-hub.mdx';
+import members from "../../data/hub-members.json"
+const title ="Response Hub"
+---
+
+<PageLayout {title}>
+    <h2>What is a Response Hub?</h2>
+    <p>
+        A volunteer based community platform under TibCERT, which is built on the structure of Learn, Share, Network and Support. An opportunity to address key digital security and tech challenges in our Tibetan community through meetings, discussions and brainstorming sessions. The goal is to finally come up with possible solutions to those challenges and to work collaboratively to implement those solutions.
+    </p> 
+    <img src="#" alt="img 1">
+   <h2> What is a Meetup ?</h2>
+   <ul>
+        <li>
+            A meetup is usually a 2 hr casual meeting of our hub members at a suitable spot (cafe, office, hall) at a suitable time which would be decided and informed by the respective regional DSAs, at least a week in advance. Finalizing a time for the meetups are done in accordance to the suggestions by the members themselves and deciding a majority favor. Meetup is a time where hub members led by our respective regional DSA's will discuss key digital security and tech issues in the community. A meeting focused on finding ways to resolve these issues by brainstorming ideas and taking basic responsibilities in the implementation of the solutions discussed.
+        </li>
+        <li>
+            A meetup is a 2 hr casual meeting held once in a month, usually on weekends among our hub members. Meetups are focused on bringing an informal, friendly and open atmosphere to get to know each other, discuss tech and digital security challenges in the community to bring up creative solutions and approaches. The "location" of the meetup could range from cafes, halls and our TAI office based on the technical requirements and number of hub members joining for a specific meetup. The "time and day" of a meetup is not fixed everytime and could vary with suggestions from our hub members as well as the TibCERT team.
+        </li>
+   </ul>
+
+   <img src="#" alt="img 1">
+   <h2>Who can join us?</h2>
+
+   <ul>
+    <li>We believe that varying skills, experiences and background of interested individuals play an integral part of a successful Response hub team . Those willing to join us don't necessarily need to have a good technical knowledge about computers or digital security. Having technical experiences and skills is great but we believe it is of secondary importance, which could be developed through time provided that one is passionate to learn, share, come up with new ideas and collaboratively implement the solutions while moving forward as a team.</li>
+   <li>Hey there! Are you a person who loves to meet new people, learn and share new ideas about technology and digital security? Are you a person who would love to join our informal get togethers to bring up cool ideas over a cup of your favorite cafe drink? Are you a person willing to contribute to our Tibetan community to overcome tech and digital security challenges? If you can relate to this, come join us! Don't forget to tell your friends too who would also love to join us!</li>
+</ul>
+
+
+
+
+<div class="mb-4 ">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center list-none border-none" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+        <li class="me-2 list-none" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">DHASA</button>
+        </li>
+        <li class="me-2 list-none" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">BYLAKUPPE</button>
+        </li>
+        <li class="me-2 list-none" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">MUNDGOD</button>
+        </li>
+    </ul>
+</div>
+<div id="default-tab-content">
+    <div class="hidden p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div>
+            <p>Dharamsala Response Hub was set up on October 16th, 2020 which is a volunteer based community under TibCERT, aimed to support individuals and organizations beyond TibCERT's effective reach based on the structure of Learn, Share, Network and Support. Currently there are 8 members who are from different organizations in Dharamsala with different professional backgrounds.</p>
+        </div>
+        <h3 class="py-5">Hub Members Information:-</h3>
+        <div class="grid grid-cols-4 gap-5">
+            {
+                members.map(member => (
+                    <div class="overflow-hidden">
+                        <img src={member.img} alt={member.name} class="w-40">
+                        <span class="text-sm">{member.name}</span><br>
+                        <span class="text-xs">{member.department}</span>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="hidden p-4 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <div>
+            <p>Bylakuppe Response Hub was set up on 20th of March 2021 with an aim to build a platform & create networks for its members to learn, share their skills and support each other as similar to other regional response hubs. Currently there are 6 members from different organizations or institutions like monasteries, offices etc.</p>
+        </div>
+    </div>
+    <div class="hidden p-4 rounded-lg" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <div>
+            <p>Mundgod's Response Hub was initiated with a mission to build a platform for its members to learn, share their skills, create networks and support each other. The regional hub consists of members from different organizations, monasteries, hospitals and regional offices.</p>
+        </div>
+    </div>
+        
+</div>
+
+
+</PageLayout>
+
+    
+   

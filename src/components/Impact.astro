@@ -1,0 +1,75 @@
+---
+import  Cube from "../components/icons/cube.astro"
+import UserGroup from "../components/icons/user-group.astro"
+import Presentation from "./icons/presentation.astro"
+---
+
+<section class="bg-center font-mont py-20 bg-cinnabar">
+    <div class="px-4 mx-auto max-w-screen-xl  ">
+        <h1 class="pt-20 text-4xl font-extrabold tracking-tight leading-none text-white md:text-xl lg:text-4xl uppercase text-center">Our Impact
+        </h1>
+        <img src="assets/pata2-genmetal.png" alt="decor" class="mx-auto">
+        
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+          <div class="grid grid-cols-3 gap-5 justify-between items-start pt-10  w-full">
+            <div class="m-auto text-center">
+                <p class="text-6xl text-white">
+                    <span class="counter" data-target="52">0</span>
+                    <span class="plus-icon">+</span>
+                </p>
+                <div class="flex py-5 m-auto text-2xl text-white items-center">
+                    <UserGroup/>
+                    <h2 class="pl-2">Member Group</h2>
+                </div>
+            </div>
+            <div class="m-auto text-center">
+                <p class="text-7xl text-white">
+                    <span class="counter" data-target="23064">0</span>
+                    <span class="plus-icon">+</span>
+                </p>
+                <div class="flex py-5 m-auto text-2xl text-white items-center justify-center">
+                    <Cube/>
+                    <h2 class="pl-2">Supports</h2>
+                </div>
+            </div>
+            <div class="m-auto text-center">
+                <p class="text-6xl text-white">
+                    <span class="counter" data-target="100">0</span>
+                    <span class="plus-icon">+</span>
+                </p>
+                <div class="flex py-5 m-auto text-2xl text-white items-center">
+                    <Presentation/>
+                    <h2 class="pl-2">Trainings Done</h2>
+                </div>   
+            </div>
+          </div>
+        </div>
+      
+    </div>
+</section>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        
+        ScrollTrigger.create({
+            trigger: counter,
+            start: "top 80%",
+            onEnter: () => {
+                gsap.to(counter, {
+                    duration: 2,
+                    innerText: target,
+                    snap: { innerText: 1 },
+                    ease: "power2.out"
+                });
+            }
+        });
+    });
+</script>

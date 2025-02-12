@@ -1,0 +1,132 @@
+---
+import testimonials from "../../data/testimoial.json";
+---
+
+<section class="bg-white dark:bg-orange-100 max-w-screen-xl overflow-hidden ">
+    <div class="px-4 py-8 mx-auto text-center lg:py-16 lg:px-6 w-full" id="slider-container">
+        <div class="slider-wrapper">
+            {testimonials.map(testimonial => (
+                <figure class="testimonial-slide">
+                    <svg class="h-12 mx-auto mb-3 text-cinnabar dark:text-cinnabar" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
+                    </svg> 
+                    <blockquote>
+                        <p class="text-xl font-medium text-gray-900 dark:text-gunmetal">{testimonial.content}</p>
+                    </blockquote>
+                    <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                        {/* <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"> */}
+                        <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
+                            <div class="pr-3 font-medium text-gray-900 dark:text-slate-600">{testimonial.name}</div>
+                            <div class="pl-3 text-sm font-light text-gray-500 dark:text-cinnabar">{testimonial.role}</div>
+                        </div>
+                    </figcaption>
+                </figure>
+            ))
+            }
+        </div>
+        
+        <!-- Add navigation buttons -->
+        <div class="flex justify-center gap-4 mt-6">
+            <button id="prevSlide" class="p-2 text-gray-600 hover:text-cinnabar dark:text-gray-400 dark:hover:text-cinnabar transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextSlide" class="p-2 text-gray-600 hover:text-cinnabar dark:text-gray-400 dark:hover:text-cinnabar transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { gsap } from 'gsap';
+
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const nextButton = document.getElementById('nextSlide');
+    const prevButton = document.getElementById('prevSlide');
+    let currentSlide = 0;
+    let isAnimating = false;
+
+    // Hide all slides except the first one
+    gsap.set(slides, { opacity: 0, x: '100%' });
+    gsap.set(slides[0], { opacity: 1, x: '0%' });
+
+    function goToSlide(nextIndex) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        // Ensure nextIndex is within bounds
+        nextIndex = (nextIndex + slides.length) % slides.length;
+
+        // Determine animation direction
+        const direction = nextIndex > currentSlide ? 1 : -1;
+        const currentX = direction > 0 ? '-100%' : '100%';
+        const nextX = direction > 0 ? '100%' : '-100%';
+
+        // Animate current slide out
+        gsap.to(slides[currentSlide], {
+            opacity: 0,
+            x: currentX,
+            duration: 0.5
+        });
+
+        // Animate next slide in
+        gsap.fromTo(slides[nextIndex],
+            { opacity: 0, x: nextX },
+            { 
+                opacity: 1, 
+                x: '0%', 
+                duration: 0.5,
+                onComplete: () => {
+                    isAnimating = false;
+                }
+            }
+        );
+
+        currentSlide = nextIndex;
+    }
+
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+
+    // Add click event listeners
+    nextButton?.addEventListener('click', nextSlide);
+    prevButton?.addEventListener('click', prevSlide);
+
+    // Start the automatic slider
+    const intervalId = setInterval(nextSlide, 5000);
+
+    // Stop automatic sliding when user interacts with buttons
+    [nextButton, prevButton].forEach(button => {
+        button?.addEventListener('mouseenter', () => clearInterval(intervalId));
+    });
+</script>
+
+<style>
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .testimonial-slide {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .testimonial-slide:first-child {
+        position: relative;
+    }
+</style>
+
+
+

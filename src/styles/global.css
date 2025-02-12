@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+        --font-mont: "Montserrat", serif;
+        --color-cinnabar: #EF482C;  /*orange */
+        --color-gunmetal: #233140;       /*navbar background color */
+        --color-japaneseindigo: #2c3e50;
+ }
+ #page-content ul{
+        padding:10px 0px;
+        margin-left:25px;
+        list-style-type:disc;
+ }
+ #page-content p{
+        padding:10px
+ }
+ #page-content h3,  #page-content h2{
+        padding-top:10px;
+        color:#EF482C;
+        font-weight:bold;
+        text-transform: uppercase;
+ }
+ #page-content a{
+        color:#EF482C;
+        word-wrap:break-word
+}
