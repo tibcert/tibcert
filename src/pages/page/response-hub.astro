@@ -10,7 +10,8 @@ const title ="Response Hub"
     <p>
         A volunteer based community platform under TibCERT, which is built on the structure of Learn, Share, Network and Support. An opportunity to address key digital security and tech challenges in our Tibetan community through meetings, discussions and brainstorming sessions. The goal is to finally come up with possible solutions to those challenges and to work collaboratively to implement those solutions.
     </p> 
-    <img src="#" alt="img 1">
+    <img src="../../images/responsehub.jpg" alt="img 1">
+    <br>
    <h2> What is a Meetup ?</h2>
    <ul>
         <li>
@@ -21,15 +22,14 @@ const title ="Response Hub"
         </li>
    </ul>
 
-   <img src="#" alt="img 1">
+   <img src="../../images/meetup.jpg" alt="img 1">
+   <br>
    <h2>Who can join us?</h2>
 
    <ul>
     <li>We believe that varying skills, experiences and background of interested individuals play an integral part of a successful Response hub team . Those willing to join us don't necessarily need to have a good technical knowledge about computers or digital security. Having technical experiences and skills is great but we believe it is of secondary importance, which could be developed through time provided that one is passionate to learn, share, come up with new ideas and collaboratively implement the solutions while moving forward as a team.</li>
    <li>Hey there! Are you a person who loves to meet new people, learn and share new ideas about technology and digital security? Are you a person who would love to join our informal get togethers to bring up cool ideas over a cup of your favorite cafe drink? Are you a person willing to contribute to our Tibetan community to overcome tech and digital security challenges? If you can relate to this, come join us! Don't forget to tell your friends too who would also love to join us!</li>
 </ul>
-
-
 
 
 <div class="mb-4 ">
@@ -45,35 +45,140 @@ const title ="Response Hub"
         </li>
     </ul>
 </div>
-<div id="default-tab-content">
-    <div class="hidden p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div>
-            <p>Dharamsala Response Hub was set up on October 16th, 2020 which is a volunteer based community under TibCERT, aimed to support individuals and organizations beyond TibCERT's effective reach based on the structure of Learn, Share, Network and Support. Currently there are 8 members who are from different organizations in Dharamsala with different professional backgrounds.</p>
+    <div id="default-tab-content">
+        <div class="hidden p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+            <div>
+                <p>Dharamsala Response Hub was set up on October 16th, 2020 which is a volunteer based community under TibCERT, aimed to support individuals and organizations beyond TibCERT's effective reach based on the structure of Learn, Share, Network and Support. Currently there are 8 members who are from different organizations in Dharamsala with different professional backgrounds.</p>
+            </div>
+            <h3 class="py-5">Hub Members Information:-</h3>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+                {
+                    members.dhasa.map(member => (
+                        <div class="overflow-hidden">
+                            <img src={member.img} alt={member.name} class="w-40">
+                            <span class="text-sm">{member.name}</span><br>
+                            <span class="text-xs">{member.department}</span>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
-        <h3 class="py-5">Hub Members Information:-</h3>
-        <div class="grid grid-cols-4 gap-5">
-            {
-                members.map(member => (
-                    <div class="overflow-hidden">
-                        <img src={member.img} alt={member.name} class="w-40">
-                        <span class="text-sm">{member.name}</span><br>
-                        <span class="text-xs">{member.department}</span>
-                    </div>
-                ))
-            }
+        <div class="hidden p-4 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+            <div>
+                <p>Bylakuppe Response Hub was set up on 20th of March 2021 with an aim to build a platform & create networks for its members to learn, share their skills and support each other as similar to other regional response hubs. Currently there are 6 members from different organizations or institutions like monasteries, offices etc.</p>
+            </div>
+            <h3 class="py-5">Hub Members Information:-</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+                {
+                    members.bylakuppe.map(member => (
+                        <div class="overflow-hidden">
+                            <img src={member.img} alt={member.name} class="w-40">
+                            <span class="text-sm">{member.name}</span><br>
+                            <span class="text-xs">{member.department}</span>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
+        <div class="hidden p-4 rounded-lg" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+            <div>
+                <p>Mundgod's Response Hub was initiated with a mission to build a platform for its members to learn, share their skills, create networks and support each other. The regional hub consists of members from different organizations, monasteries, hospitals and regional offices.</p>
+            </div>
+            <h3 class="py-5">Hub Members Information:-</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+                {
+                    members.mundgod.map(member => (
+                        <div class="overflow-hidden">
+                            <img src={member.img} alt={member.name} class="w-40">
+                            <span class="text-sm">{member.name}</span><br>
+                            <span class="text-xs">{member.department}</span>
+                        </div>
+                    ))
+                }
+        </div>
+            
     </div>
-    <div class="hidden p-4 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-        <div>
-            <p>Bylakuppe Response Hub was set up on 20th of March 2021 with an aim to build a platform & create networks for its members to learn, share their skills and support each other as similar to other regional response hubs. Currently there are 6 members from different organizations or institutions like monasteries, offices etc.</p>
-        </div>
-    </div>
-    <div class="hidden p-4 rounded-lg" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        <div>
-            <p>Mundgod's Response Hub was initiated with a mission to build a platform for its members to learn, share their skills, create networks and support each other. The regional hub consists of members from different organizations, monasteries, hospitals and regional offices.</p>
-        </div>
-    </div>
-        
+<br>
+<h2 class="pt-20 pb-10 text-center">Some of the works that our Hubs has done to solve the issues faced by our community</h2>
+
+<div class="relative overflow-hidden shadow-md rounded-lg">
+    <table class="w-full text-left">
+        <thead class="uppercase  text-[#e5e7eb] bg-gunmetal" >
+            <tr>
+                <td class="py-2 border border-gray-200 text-center  p-4" >Issue</td>
+                <td class="py-2 border border-gray-200 text-center  p-4" >Description</td>
+                <td class="py-2 border border-gray-200 text-center  p-4" >links
+                </td>
+            </tr>
+        </thead>
+        <tbody class=" text-sm text-slate-600" >
+           
+            <tr class=" py-2">
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <p>Disinformation and Misinformation in our community</p>
+                </td>
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <p>Panel discussion on “The impact of social media in our community” - Disinformation and misinformation (covid-19), Tibetan General Election, social media fake accounts, identity theft and cyber bully/harassment.
+We invited speakers on the panel discussion who have different professional backgrounds such as News media, Tibetan policy, Gender activism and Medical and Healthcare.
+The audience for the panel discussion were representatives of different organizations in and around Dharamsala.</p>
+                </td>
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <li><a href="https://fb.watch/3wYb-bsEiw/">Impact of Social Media in Community</a></li>
+                    <li><a href="https://docs.google.com/document/d/1oOfvekIwjNBv7O4S1WirIkD5UZz4ApvfP0Hqhtl9D5k/edit">Panel Discussion</a></li>
+                </td>
+            </tr>
+
+            <tr class=" py-2">
+                <td class=" py-2 border border-gray-200  p-4" >
+                    <p>Technical language barrier</p>
+                </td>
+          <td class=" py-2 border border-gray-200  p-4" >
+            <p>We have made a Tibetan Glossary Database. This database contains most of the technical terms and their translation in Tibetan. So whenever you don’t understand a term on the web, you can always refer to the glossary..</p>
+            </td>
+                <td class=" py-2 border border-gray-200  p-4" >
+                    <li><a href="https://docs.google.com/spreadsheets/d/1sKjUfABDetRPy20-qYyvQ1teNqBuShBAAKk6QxGWgNA/edit#gid=0">Tibetan Glossary</a></li></td>  
+            </tr>
+
+            <tr class=" py-2">
+                <td class=" py-2 border border-gray-200  p-4" >
+                    <p>Response Hub as a Resource Center</p>
+                </td>
+          <td class=" py-2 border border-gray-200   p-4" >
+            <p>We have shared resources such as commonly used softwares and utility tools with our hub members to further share in their organizations. As these softwares and tools are in need and used in many organizations.
+                We also offer assistance in purchase of any tech gadgets and devices and our TibCERT community hub center is always equipped with such resources and ready to serve the community.</p>
+            </td>
+                <td class=" py-2 border border-gray-200  p-4" >
+                    <li><a href="https://docs.google.com/document/d/1e3od5KCYTJVWy31iMfT_DyGhvaCcQTX1iag0tIgZrOE/edit">Link</a></li></td>  
+            </tr>
+
+            <tr class=" py-2">
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <p>Software installation, usage and update issues</p>
+                </td>
+            <td class=" py-2 border border-gray-200   p-4" >
+                <p>1. We did training on finding the parent website of software and then doing all checks like compatibility, security, reviews etc. After doing all the research then downloading it and installing it and using it.</p>
+                <p>2. We did training on how to update various devices like pc, mac, android and iOS.</p>
+            </td>
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <li><a href="https://docs.google.com/document/d/1yDL8yUwKOzZy9ghMgC9jOM9tOF493aVF/edit">Link</a></li></td>  
+            </tr>
+
+            <tr class=" py-2">
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <p>Importance of Digital Security Policy in our community</p>
+                </td>
+            <td class=" py-2 border border-gray-200   p-4" >
+                <p>1. Digital Security Policy awareness event involving participants from various organizations in Dharamsala.</p>
+                <p>2. Short awareness skit video on the importance of Digital Security Policy.</p>
+            </td>
+                <td class=" py-2 border border-gray-200   p-4" >
+                    <li><a href="https://docs.google.com/document/d/1zGyjOsf8atJ9JlBSQsodmJQt8ET_BxxjKOWw3gIcaNA/edit">Link</a></li></td>  
+            </tr>
+           
+        </tbody>
+    </table>
 </div>
 
 

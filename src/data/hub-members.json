@@ -1,45 +1,116 @@
-[
-    {
+
+
+{
+    "dhasa": [
+      {
         "name": "Sonam Phuntsok",
         "department": "MonlamAI",
-        "img" : "../assets/hub/sonam-phuntsok.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/sonam-phuntsok.jpeg"
+      },
+      {
         "name": "Lobsang Dhamchoe",
         "department": "LHA Charitable Trust",
-        "img" : "../assets/hub/LobsangDhamchoe-LHA.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/LobsangDhamchoe-LHA.jpeg"
+      },
+      {
         "name": "Tenzin Choedon",
         "department": "Freelance",
-        "img" : "../assets/hub/Choedon-Drokmo.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/Choedon-Drokmo.jpeg"
+      },
+      {
         "name": "Nyeesang Wangmo",
         "department": "Mentseekhang (TMAI) - Sys-Admin",
-        "img" : "../assets/hub/Nyeesang wangpo-TMAI.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/Nyeesang wangpo-TMAI.jpeg"
+      },
+      {
         "name": "Sangje Dondup",
         "department": "Tibetan Medicare System - TMS",
-        "img" : "../assets/hub/SangjeDondup-TMS.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/SangjeDondup-TMS.jpeg"
+      },
+      {
         "name": "Tenzin Choezin",
         "department": "Tibetan library (LTWA)",
-        "img" : "../assets/hub/TenzinChoezin-Library.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/TenzinChoezin-Library.jpeg"
+      },
+      {
         "name": "Tenzin Lekdhen",
         "department": "SFTIndia - Campaigns Director",
-        "img" : "../assets/hub/tenzin-lekdhen.jpeg"
-    },
-    {
+        "img": "../../assets/hub/dhasa/tenzin-lekdhen.jpeg"
+      },
+      {
         "name": "Rinchen Dorjee",
         "department": "SFTIndia - Program Coordinator",
-        "img" : "../assets/hub/rinchen-dorjee.jpeg"
-    }
-]
-
-
+        "img": "../../assets/hub/dhasa/rinchen-dorjee.jpeg"
+      }
+    ],
+    "bylakuppe": [
+      {
+        "name": "Gen.Kelsang Thardoe",
+        "department": "Sera Jeh Rigzoe Chenmo Manager (Sera Jeh Monastery)",
+        "img": "../../assets/hub/bylakuppe/gen-kalsang-thardoe.jpg"
+      },
+      {
+        "name": "Geshay. Ngawang Topden",
+        "department": "Sera Jeh Library Manager (Sera Jeh Monastery)",
+        "img": "../../assets/hub/bylakuppe/gen-ngawang-topden.jpg"
+      },
+      {
+        "name": "Gen. Namgyal",
+        "department": "Cyber Cafe Incharge + RC & IC helper (Sera Lachi Monastery)",
+        "img": "../../assets/hub/bylakuppe/gen-namgyal.jpg"
+      },
+      {
+        "name": "Gen. Gyaltsen",
+        "department": "Sera Mey Library Senior Staff (Sera Mey Monastery)",
+        "img": "../../assets/hub/bylakuppe/gen-gyaltsen.jpg"
+      },
+      {
+        "name": "Gen. Jampa Dhamey",
+        "department": "Sera Mey Library Staff (Sera Mey Monastery)",
+        "img": "../../assets/hub/bylakuppe/gen-jampa-dhamey.jpg"
+      },
+      {
+        "name": "Gen.Phurbu",
+        "department": "Cashier (SOS TCV School Main Office)",
+        "img": "../../assets/hub/bylakuppe/gen-phuche.jpg"
+      }  
+    ],
+    "mundgod": [
+      {
+        "name": "Gen Pankaj Rathore",
+        "department": "Accountant, Drepung Loseling Monastery",
+        "img": "../../assets/hub/mundgod/pankaj-rathore.jpeg"
+      },
+      {
+        "name": "Ms. Tsering Dolma",
+        "department": "Science Teacher, Drepung Gomang Science Center",
+        "img": "../../assets/hub/mundgod/tsering-dolma.jpeg"
+      },
+      {
+        "name": "Geshe Lobsang Tenzin",
+        "department": "Accountant of administration, Gaden Shartse Monastery",
+        "img": "../../assets/hub/mundgod/lobsang-tenzin.jpeg"
+      },
+      {
+        "name": "Gen Tsering Chogyal",
+        "department": "Website management, Gaden Shartse Monastery",
+        "img": "../../assets/hub/mundgod/tsering-chogyal.jpeg"
+      },
+      {
+        "name": "Gen Jamyang Wangyal",
+        "department": "Secretary, Sakya Monastery",
+        "img": "../../assets/hub/mundgod/jamyang-wangyal.jpeg"
+      },
+      {
+        "name": "Gen Tenzin Gawa",
+        "department": "Drepung Gomang",
+        "img": "../../assets/hub/mundgod/tenzin-gawa.jpeg"
+      },
+      {
+        "name": "Gen Lhundup Dorjee",
+        "department": "Student, Drepung Loseling",
+        "img": "../../assets/hub/mundgod/lhundup-dorjee.jpeg"
+      }  
+    ]
+  }
   
