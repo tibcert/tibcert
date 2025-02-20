@@ -3,12 +3,9 @@
 ---
 
 <section class="bg-top bg-no-repeat bg-[url('../images/tibcert.jpg')] bg-gray-700 bg-blend-multiply font-mont ">
-    <div class="px-4 mx-auto max-w-screen-xl  py-24 lg:py-40 ">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-center pt-20">TIBCERT</h1>
-        <p class=" text-xl font-normal text-gray-300 lg:text-3xl sm:px-16 lg:px-48 text-center">Strengthening security and building technical excellence of Tibetan organizations through collaboration and knowledge sharing</p>
-    
-
-        
+    <div class="px-4 mx-auto max-w-screen-xl py-24 lg:py-40">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-center pt-20 opacity-0" id="hero-title">TIBCERT</h1>
+        <p class="text-xl font-normal text-gray-300 lg:text-3xl sm:px-16 lg:px-48 text-center opacity-0" id="hero-text">Strengthening security and building technical excellence of Tibetan organizations through collaboration and knowledge sharing</p>
     </div>
     <div class=" max-w-screen-2xl grid lg:grid-cols-3 gap-5 mx-auto relative top-10 ">
         <div class=" h-10 bg-yellow-500 absolute z-10 -top-5 -rotate-[20deg] md:-left-10  flex items-center justify-center rounded-sm animate-bounce shadow-md">
@@ -43,5 +40,37 @@
         </a>
     </div>
 </section>
+
+<script>
+    import gsap from 'gsap';
+    
+    // Animation timeline
+    const tl = gsap.timeline({ defaults: { ease: "power2.out" }});
+    
+    // Slide in animations for hero elements
+    tl.fromTo("#hero-title", 
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 }
+    ).fromTo("#hero-text",
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 },
+        "-=0.5"
+    )
+    
+    // Add animations for article links
+    .fromTo("section > div:last-child > a", 
+        {
+            x: -100,
+            opacity: 0,
+        },
+        {
+            x: 0,
+            opacity: 1,
+            duration: 0.3,
+            stagger: 0.2 // Adds 0.2s delay between each element's animation
+        },
+        "-=0.3" // Start slightly before previous animation ends
+    );
+</script>
 
 
