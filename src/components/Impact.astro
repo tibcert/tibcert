@@ -4,7 +4,16 @@ import UserGroup from "../components/icons/user-group.astro"
 import Presentation from "./icons/presentation.astro"
 ---
 
-<section class="bg-center font-mont py-20 bg-cinnabar">
+<section class="bg-center font-mont py-20 bg-cinnabar relative overflow-hidden">
+    <!-- Animated SVG Background -->
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+            <path class="wave1" fill="#ffffff" fill-opacity="0.3" d="M0,160L34.3,165.3C68.6,171,137,181,206,165.3C274.3,149,343,107,411,96C480,85,549,107,617,133.3C685.7,160,754,192,823,186.7C891.4,181,960,139,1029,122.7C1097.1,107,1166,117,1234,122.7C1302.9,128,1371,128,1406,128L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+            <path class="wave2" fill="#ffffff" fill-opacity="0.5" d="M0,224L34.3,213.3C68.6,203,137,181,206,186.7C274.3,192,343,224,411,234.7C480,245,549,235,617,213.3C685.7,192,754,160,823,165.3C891.4,171,960,213,1029,224C1097.1,235,1166,213,1234,192C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+            <path class="wave3" fill="#ffffff" fill-opacity="0.7" d="M0,256L34.3,261.3C68.6,267,137,277,206,277.3C274.3,277,343,267,411,245.3C480,224,549,192,617,181.3C685.7,171,754,181,823,192C891.4,203,960,213,1029,218.7C1097.1,224,1166,224,1234,213.3C1302.9,203,1371,181,1406,170.7L1440,160L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+        </svg>
+    </div>
+
     <div class="px-4 mx-auto max-w-screen-xl  ">
         <h1 class="pt-20 text-4xl font-extrabold tracking-tight leading-none text-white md:text-xl lg:text-4xl uppercase text-center">Our Impact
         </h1>
@@ -72,4 +81,41 @@ import Presentation from "./icons/presentation.astro"
             }
         });
     });
+
+    // Animate the waves
+    gsap.to('.wave1', {
+        duration: 18,
+        x: -1440,
+        repeat: -1,
+        ease: 'none'
+    });
+
+    gsap.to('.wave2', {
+        duration: 15,
+        x: 1440,
+        repeat: -1,
+        ease: 'none'
+    });
+
+    gsap.to('.wave3', {
+        duration: 12,
+        x: -1440,
+        repeat: -1,
+        ease: 'none'
+    });
 </script>
+
+<style>
+    .waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 200%; /* Make waves wider to prevent gaps during animation */
+    }
+
+    .wave1, .wave2, .wave3 {
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+</style>

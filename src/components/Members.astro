@@ -4,10 +4,11 @@ import members from "../../src/data/members.json";
 
 <section class="bg-center font-mont py-20 bg-orange-100 ">
     <div class="px-4 mx-auto max-w-screen-xl text-center ">
-        <h1 class="pt-20 text-4xl font-extrabold tracking-tight leading-none text-gunmetal md:text-xl lg:text-4xl uppercase">Active Members
-        </h1>
-        <img src="assets/pata2-cinnabar.png" alt="decor" class="mx-auto">
-        
+        <div>
+          <h1 class="pt-20 text-4xl font-extrabold tracking-tight leading-none text-gunmetal md:text-xl lg:text-4xl uppercase">Active Members
+          </h1>
+          <img src="assets/pata2-cinnabar.png" alt="decor" class="mx-auto">
+        </div>
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 relative overflow-hidden">
           <div class="grid grid-cols-6 md:grid-cols-10 gap-5 md:gap-13 justify-between items-center pt-10 logo ">
             {members.map(member => (
