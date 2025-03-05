@@ -8,8 +8,12 @@ const data = await response.text();
 const result = await parseStringPromise(data);
 const items = result.rss.channel[0].item;
 
+const src = "https://blog.tibcert.org"
+
 const posts = items.slice(0, 3).map(item => ({
   title: item.title[0],
+  cover: item.cover[0],
+  category: item.category[0],
   description: item.description[0].replace(/<[^>]*>/g, ''),
   link: item.link[0],
   pubDate: new Date(item.pubDate[0]).toLocaleDateString(),
@@ -28,7 +32,7 @@ const posts = items.slice(0, 3).map(item => ({
           <div class="grid grid-col-1 md:grid-cols-3 gap-5 justify-between items-start pt-10">
             {posts.map(post => (
               <div class="bg-orange-100 p-3 rounded-2xl border-cinnabar border-2">
-               {/* <img class="rounded-2xl" src="https://s7712.pcdn.co/wp-content/uploads/2025/01/Deepseek-1-1024x1024.png" alt=""> */}
+               <img class="rounded-2xl" src={`${src}${post.cover}`} alt={`${src}${post.cover}`}>
                 <div class="p-3">
                  <a href={post.link}> <h2 class="text-cinnabar text-xl font-bold uppercase pt-3">{post.title}</h2></a>
                   <p class="line-clamp-4">
@@ -36,7 +40,7 @@ const posts = items.slice(0, 3).map(item => ({
                   </p>
                 </div>
                 <div class="flex justify-between p-3 text-gunmetal">
-                  <span class="flex"> <MapPin/>TIBCERT Blog</span>
+                  <span class="flex"> <MapPin/>{post.category}</span>
                   <span class="flex"> <Calendar/> {post.pubDate}</span>
                 </div>
               </div>
